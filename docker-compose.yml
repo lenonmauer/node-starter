@@ -20,6 +20,10 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
     ports:
       - 80:80
+    depends_on:
+      - node
+    links:
+      - node
 
   mysql:
     container_name: mysql
