@@ -6,6 +6,8 @@ services:
     image: postgres:12
     ports:
       - 5432:5432
+    volumes:
+      - /userlogin/postgres/data/:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=docker
       - POSTGRES_USER=docker
