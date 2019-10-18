@@ -1,3 +1,5 @@
 docker exec -i -t nginx /bin/bash
 
 docker system prune --volumes
+
+docker-compose run --service-ports node

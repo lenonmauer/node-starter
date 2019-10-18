@@ -3,7 +3,7 @@ import databaseLoader from './database';
 import Logger from './logger';
 
 export default async () => {
-  // await databaseLoader();
+  await databaseLoader();
 
   const app = expressLoader();
 

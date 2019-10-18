@@ -4,13 +4,8 @@ RUN npm i -g yarn
 
 WORKDIR /home/app
 
-COPY package.json .
-COPY yarn.lock .
-
-RUN ls
+COPY ./backend/package.json .
 
 RUN yarn
 
-COPY . .
-
-RUN ls
+COPY ./backend .

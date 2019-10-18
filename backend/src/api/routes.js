@@ -4,7 +4,7 @@ import SignInController from './controllers/SignInController';
 export default function apiRoutes() {
   const router = new Router();
 
-  router.head('/stats', (req, res) => res.send('ok'));
+  router.get('/', (req, res) => res.send('works'));
 
   router.post('/signin', SignInController.store);
 
