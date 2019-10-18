@@ -9,3 +9,5 @@ COPY ./backend/package.json .
 RUN yarn
 
 COPY ./backend .
+
+RUN yarn build

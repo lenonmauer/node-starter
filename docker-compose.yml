@@ -64,9 +64,11 @@ services:
     volumes:
       - ./backend:/home/app
       - /home/app/node_modules
+      - /home/app/build
     environment:
       NODE_ENV: development
-    command: yarn dev
+    #command: yarn dev
+    command: yarn start
     depends_on:
       - mongo
     links:

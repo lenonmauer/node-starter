@@ -6,6 +6,8 @@ export default function apiRoutes() {
 
   router.get('/', (req, res) => res.send('works'));
 
+  router.get('/insert', SignInController.index);
+
   router.post('/signin', SignInController.store);
 
   return router;

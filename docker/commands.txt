@@ -1,4 +1,4 @@
-docker exec -i -t nginx /bin/bash
+docker exec -i -t node /bin/bash
 
 docker system prune --volumes
 
