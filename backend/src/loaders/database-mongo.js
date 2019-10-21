@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
-import config from '../config';
+import configs from '../config';
 
 export default async () => {
   const connection = await mongoose
-    .connect(config.databaseURL, {
+    .connect(configs.database.url, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,

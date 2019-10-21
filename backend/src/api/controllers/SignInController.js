@@ -1,11 +1,9 @@
-import User from '../../models/user';
+import User from '../../database/models/zueira';
 
 class SignInController {
   async index(req, res, next) {
     const user = await User.create({
       name: 'Lenon',
-      email: 'lenonmauer@gmail.com',
-      password: '123',
     });
 
     return res.json(user);

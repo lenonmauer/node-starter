@@ -1,8 +1,9 @@
 import winston from 'winston';
 
-import config from '../config';
+import configs from '../config';
 
 const transports = [];
+
 if (process.env.NODE_ENV !== 'development') {
   transports.push(new winston.transports.Console());
 } else {
@@ -14,7 +15,7 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 const LoggerInstance = winston.createLogger({
-  level: config.logs.level,
+  level: configs.logger.level,
   levels: winston.config.npm.levels,
   format: winston.format.combine(
     winston.format.timestamp({
