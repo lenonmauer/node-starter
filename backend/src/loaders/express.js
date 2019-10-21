@@ -14,14 +14,6 @@ import middlewareGeneralError from '../middlewares/general-error';
 export default () => {
   const app = express();
 
-  app.get('/status', (req, res) => {
-    res.status(200).end();
-  });
-
-  app.head('/status', (req, res) => {
-    res.status(200).end();
-  });
-
   app.enable('trust proxy');
 
   app.use(helmet());
@@ -31,7 +23,7 @@ export default () => {
 
   app.use(middlewareOnly());
 
-  app.use(config.api.prefix, routes());
+  app.use(routes(config.api.prefix));
 
   app.use(middlewareNotFound());
 

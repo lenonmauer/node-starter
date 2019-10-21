@@ -1,14 +1,10 @@
-echo Shutting down all containers
-docker-compose down
+# echo "========== Building app =========="
+# docker-compose build --no-cache
+# docker-compose build
 
-echo Uploading Application container
-docker-compose up --build -d
+echo "========== Starting app =========="
+docker-compose up -d node redis mongo
 
-echo Copying .env file
-cp backend/.env.example backend/.env
+echo "==========App ready =========="
 
-echo Information of new containers
-docker ps -a
-
-# echo Make migrations
-# sleep 3 && docker exec -it node yarn migrate
+$SHELL

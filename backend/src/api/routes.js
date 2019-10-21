@@ -1,14 +1,19 @@
 import { Router } from 'express';
 import SignInController from './controllers/SignInController';
 
-export default function apiRoutes() {
+export default function apiRoutes(apiBaseURL) {
   const router = new Router();
+  const apiRouter = new Router();
 
-  router.get('/', (req, res) => res.send('works'));
+  router.use(apiBaseURL, apiRouter);
 
-  router.get('/insert', SignInController.index);
+  router.get('/', (req, res) => res.send('server works.'));
 
-  router.post('/signin', SignInController.store);
+  apiRouter.get('/', (req, res) => res.send('api works.'));
+
+  apiRouter.get('/insert', SignInController.index);
+
+  apiRouter.post('/signin', SignInController.store);
 
   return router;
 }
